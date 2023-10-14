@@ -1,0 +1,38 @@
+# Specify the input Verilog files (replace with your file names)
+read_verilog alarm_reg.v
+read_verilog counter.v
+read_verilog fsm.v
+read_verilog keyreg.v
+read_verilog lcd_driver.v
+read_verilog lcd_driver_4.v
+read_verilog timegen.v
+read_verilog alarm_clock_top.v
+
+# Perform an elaborate step to create a design hierarchy
+hierarchy -check -top alarm_clock_top
+
+# Set synthesis options (you can adjust these as needed)
+# For example, to target a specific FPGA family or ASIC technology
+synth_ice40 -top alarm_clock_top
+
+# Optimize the design
+opt
+
+# Perform technology mapping (convert to target-specific gates)
+techmap
+
+# Perform mapping optimizations
+opt
+
+# Perform final cleanup and renaming
+clean -purge
+
+# Generate the synthesized design (replace "output_synthesized.v" with your desired output file name)
+# Read library files
+read_liberty -lib /home/khaja/Desktop/qflowpdks/qflow/tech/osu018/osu018_stdcells.lib
+write_verilog output_synthesized.v
+
+#remove unwanted
+write_verilog -noattr digital_clock_alarm1.v
+
+
