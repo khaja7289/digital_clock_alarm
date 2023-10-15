@@ -307,8 +307,8 @@ Usage
 
 # To replicate the project:
 
-Clone the repository: git clone [https://github.com/khaja7289/ALU.git](https://github.com/khaja7289/ALU/tree/main)
-Follow the instructions in the respective directories (rtl/, verification/, qflow/) to run simulations, synthesize, and perform physical design with Qflow.
+Clone the repository: git clone [(https://github.com/khaja7289/digital_clock_alarm)].
+Follow the instructions in the respective directories (rtl/, verification/, qflow/) to run simulations, synthesize, and perform RTL to GDSII flow for the implementation of digital clock alarm using  Qflow.
 
 # Contributors
 
